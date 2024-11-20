@@ -5,12 +5,15 @@ import { TabelaProdutoComponent } from './componentes/tabela-produto/tabela-prod
 import { CardComponent } from './lanches/card/card.component';
 import { CardPizzasComponent } from './pizzas/card-pizzas/card-pizzas.component';
 import { CardSorvetesComponent } from './sorvetes/card-sorvetes/card-sorvetes.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 export const routes: Routes = [
   {
     path:'login',
     component:LoginComponent,
+  },
+  {
+    path:'**', redirectTo: 'login'
   },
   {
     path: '',
