@@ -37,8 +37,8 @@ $cardapio-theme: mat.define-light-theme((
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
-html, body { height:100%; overflow: auto}
-body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+html, body { height:100%; overflow: hidden}
+body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif;}
 
 .mt-10 {
   margin-top: 16rem;
