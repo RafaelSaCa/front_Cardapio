@@ -1,0 +1,62 @@
+@import "../../../styles/variables.scss";
+
+
+.login-container{
+  max-width: 450px;
+  margin: 100px auto;
+  padding: 100px;
+  border: 1px solid $gray-bg;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+form div,h2{
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+
+  img{
+    width: 200px;
+    height: auto;
+    display: inline-block;
+
+  }
+
+}
+
+
+
+label{
+  display: block;
+  margin-bottom: 5px;
+  font-family: $font-default;
+
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  background-color: $gray-secondary-bg;
+  color: $text-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: $font-default;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: $primary-color;
+    margin-top: 10px;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: $font-default;
+}

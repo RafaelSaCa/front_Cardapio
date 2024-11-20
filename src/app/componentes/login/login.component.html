@@ -1,0 +1,26 @@
+
+  <div class="login-container">
+    <form [formGroup]="loginForm">
+      <div class="logo">
+        <img src="../../../assets/logo.png" >
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="seuemail@mail.com">
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          O E-mail é obrigátório e deve ser válido!
+        </div>
+      </div>
+
+      <div>
+        <label for="password">Senha</label>
+        <input id="password" type="password" formControlName="password" placeholder="sua senha">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          A senha é obrigátória!
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    </form>
+  </div>
