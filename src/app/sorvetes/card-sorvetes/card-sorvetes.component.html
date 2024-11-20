@@ -1,0 +1,31 @@
+
+@if(produtos$ | async; as produtos){
+  <div class="container mt-10">
+    <h3>Sorvetes</h3>
+    <hr class="mb-4">
+    <div class="row">
+      @for (produto of produtos; track produto) {
+         @if (produto.tipo === 'sorvete') {
+
+          <div class="card me-2 mb-3" style="width: 16rem">
+            <img src="{{produto.imgUrl}}" class="card-img-top p-1 mt-2" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"> {{produto.nome}} </h5>
+              <p class="card-text">
+                {{produto.descricao}}
+              </p>
+            </div>
+            <div class="card-footer text-body-secondary d-flex justify-content-between">
+              <h5 class="text-end">R${{ produto.valor }},00</h5>
+              <button mat-mini-fab class="bg-success"  (click)="addAoCarrinho(produto)">
+                <mat-icon>shopping_cart</mat-icon>
+              </button>
+            </div>
+          </div>
+
+      }
+    }
+    </div>
+  </div>
+
+}
