@@ -62,13 +62,13 @@ export class CadastroProdutoComponent implements OnInit{
       const produtoAtualizado = this.form.value;
       this.service.editar(this.produtoId!,produtoAtualizado).subscribe(()=>{
         this.showSuccesso();
-        this.router.navigate(['/lista']);
+        this.router.navigate(['/estoque']);
       });
     }else{
       this.service.cadastrar(this.form.value).subscribe(resposta =>{
         this.showSuccesso();
         this.form.reset();
-        this.router.navigate(['/lista']);
+        this.router.navigate(['/estoque']);
       },
       error => {
        this.showErro();
