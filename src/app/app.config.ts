@@ -1,10 +1,12 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, RouterModule } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideToastr, ToastrModule } from 'ngx-toastr';
+import { routes } from './app.routes';
+import { AuthInterceptor } from './service/auth.interceptor';
+
 
 ToastrModule.forRoot({
   timeOut: 10000,
@@ -16,8 +18,12 @@ export const appConfig: ApplicationConfig = {
 
   providers: [
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
+    provideHttpClient(withInterceptors([AuthInterceptor])),
     provideAnimationsAsync(),
     provideToastr(),
+
+
+
   ],
 };
