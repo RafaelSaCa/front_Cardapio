@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
 import { AuthResponse } from '../models/authResponse';
 
 
@@ -11,18 +10,15 @@ export class AuthService {
 
   constructor( private http: HttpClient){}
 
-  // login (username: string, password: string) {
-  //   return this.http.post<AuthResponse>('/api/auth/login',{username,password}).pipe(
-  //     tap ((value) =>{
-  //       sessionStorage.setItem("acess_token", value.acess_token)
-  //       sessionStorage.setItem("username", value.nome)
-  //     })
-  //    )
-  // }
-
   login ( username: string, password: string){
     return this.http.post<AuthResponse>('/api/auth/login',{username,password});
   }
+
+  isLogged():boolean{
+    const token = localStorage.getItem('acess_token');
+    return !!token;
+  }
+
 
    // Armazena o token no localStorage
    setToken(token: string): void {
