@@ -1,1 +1,3 @@
-<router-outlet/>
+<app-navbar *ngIf="isLoggedIn()" />
+<app-header *ngIf="isLoggedIn()" />
+<router-outlet />
