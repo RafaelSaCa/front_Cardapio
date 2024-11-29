@@ -7,6 +7,7 @@ import { CardComponent } from './lanches/card/card.component';
 import { CardPizzasComponent } from './pizzas/card-pizzas/card-pizzas.component';
 import { CardSorvetesComponent } from './sorvetes/card-sorvetes/card-sorvetes.component';
 import { authGuard } from './service/auth-guard.service';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,11 @@ export const routes: Routes = [
   {
     path: '',
     component: CardComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'home',
+    component: NavbarComponent,
     canActivate: [authGuard]
   },
   {
